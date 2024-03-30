@@ -17,17 +17,13 @@ search.addEventListener("click", () => {
   let cityval = input.value;
   weather(cityval);
 });
-
 input.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    try {
-      let cityval = input.value;
-      weather(cityval);
-    } catch (error) {
-      console.log("please entrer valid city name.");
-    }
+    let cityval = input.value;
+    weather(cityval);
   }
 });
+
 // Add EventListner on input fild.
 input.addEventListener("input", () => {
   if (input.value !== "") {
