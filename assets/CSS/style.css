@@ -21,6 +21,13 @@ body {
   color: white;
 }
 
+.instruction {
+  height: 0px;
+  margin-left: 30px;
+  font-size: 14px;
+  font-display: none;
+}
+
 .search {
   margin-top: 20px;
   margin-right: 20px;

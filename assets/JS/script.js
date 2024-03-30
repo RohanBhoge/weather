@@ -10,11 +10,31 @@ let input = document.querySelector(".search input");
 let city = document.querySelector("city");
 let search = document.querySelector(".search button");
 let defcity = "pune";
+let instruction = document.querySelector(".instruction");
 
 // Add EventListner to Search Button.
 search.addEventListener("click", () => {
   let cityval = input.value;
   weather(cityval);
+});
+
+input.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    try {
+      let cityval = input.value;
+      weather(cityval);
+    } catch (error) {
+      console.log("please entrer valid city name.");
+    }
+  }
+});
+// Add EventListner on input fild.
+input.addEventListener("input", () => {
+  if (input.value !== "") {
+    instruction.style.display = "block";
+  } else {
+    instruction.style.display = "none";
+  }
 });
 
 // Function which write temp, humidity, city, wind speed.
